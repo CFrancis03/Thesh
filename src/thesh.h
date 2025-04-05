@@ -5,6 +5,7 @@
 int thesh_cd(char **args);
 int thesh_help(char **args);
 int thesh_exit(char **args);
+int thesh_echo(char **args);
 int thesh_num_builtins(void);
 
 // Execution functions

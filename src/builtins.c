@@ -7,13 +7,15 @@
 char *builtin_str[] = {
   "cd",
   "help",
-  "exit"
+  "exit",
+  "echo"
 };
 
 int (*builtin_func[]) (char **) = {
   &thesh_cd,
   &thesh_help,
-  &thesh_exit
+  &thesh_exit,
+  &thesh_echo
 };
 
 int thesh_num_builtins() {
@@ -45,4 +47,15 @@ int thesh_help(char **args) {
 int thesh_exit(char **args) {
   return 0;
 }
+
+
+
+int thesh_echo(char **args) {
+    for (int i = 1; args[i] != NULL; i++) {
+        printf("%s ", args[i]);
+    }
+    printf("\n");
+    return 1;
+}
+
 
