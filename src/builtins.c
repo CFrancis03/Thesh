@@ -8,14 +8,16 @@ char *builtin_str[] = {
   "cd",
   "help",
   "exit",
-  "echo"
+  "echo",
+  "date"
 };
 
 int (*builtin_func[]) (char **) = {
   &thesh_cd,
   &thesh_help,
   &thesh_exit,
-  &thesh_echo
+  &thesh_echo,
+  &thesh_date
 };
 
 int thesh_num_builtins() {
@@ -58,4 +60,7 @@ int thesh_echo(char **args) {
     return 1;
 }
 
-
+int thesh_date(char **args){
+	system("date");
+	return 1;
+}
